@@ -28,9 +28,10 @@ namespace Branching
             Console.WriteLine("what is the package length?");
             double length = Convert.ToDouble(Console.ReadLine());
 
-            double dimen = (width * height * length) * weight / 100.00;
+            double dimen = (width + height + length);
+            double quote = (width * height * length) * ( weight ) / 100.00;
 
-            if (width > 50.00 || length > 50.00 || height > 50.00)
+            if (dimen > 50.00)
             {
                 Console.WriteLine("Package too big to be shipped via Package Express.");
                 Console.ReadLine();
@@ -38,7 +39,7 @@ namespace Branching
             }
             else
             {
-                Console.WriteLine("Your estimated total for shipping this package is: {0:c}", dimen);
+                Console.WriteLine("Your estimated total for shipping this package is: {0:c}", quote);
                 Console.WriteLine("Thank you!");
                 Console.ReadLine();
 
